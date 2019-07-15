@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/bin:/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/jason/.oh-my-zsh"
@@ -68,8 +68,9 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git colored-man-pages zsh-syntax-highlighting)
 
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -79,6 +80,59 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+# venv () {
+#     # Usage: activate_venv [venv_name]
+#     # Travels up the directory tree looking for a virtual environment that
+#     # matches $venv_name. Activates the first one that it finds.
+#     # Default venv_name: venv*
+# 
+#     venv_name="$1"
+# 
+#     path=$(pwd)
+#     venv_path=""
+#     if [[ "$venv_name" == "" ]]
+#     then
+#         venv_name="venv*"
+#     fi
+#     while [[ "$path" != "" && "$venv_path" == "" ]]
+#     do
+#         for fname in $path/$venv_name
+#         do
+#             # If there exists a directory that matches $venv_name, then set
+#             # venv_path to that path.
+#             [ -d "$fname" ] && venv_path=$fname
+#         done
+#         path=${path%/*}
+#     done
+#     if [[ "$venv_path" == "" ]]
+#     then
+#         echo "No venv matching $venv_name found!"
+#     else
+#         echo "Using venv at: $venv_path"
+#         source $venv_path/bin/activate
+#         echo "$(python -V)"
+#     fi
+# }
+
+explore_f () {
+    session=$DESKTOP_SESSION
+    if [[ $session == "plasma" ]]
+    then
+        dolphin .
+    fi
+}
+alias explore=explore_f
+
+try_f () {
+    session=$DESKTOP_SESSION
+    if [[ $session == "plasma" ]]
+    then
+        kde-open $1
+    fi
+}
+alias try=try_f
+
+export EDITOR='vim'
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -93,7 +147,15 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+
+alias rsync2="rsync --info=progress2"
+alias clip="xargs echo -n | xclip -selection clipboard"
+
+alias kitten='ssh -X jason@kitten.eecs.berkeley.edu'
+alias maul='ssh -X jason@maul.banatao.berkeley.edu'
+alias savio='ssh zhangj@hpc.brc.berkeley.edu'
+
+alias source_sh='source ~/.zshrc'
