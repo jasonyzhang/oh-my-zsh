@@ -159,3 +159,4 @@ alias maul='ssh -X jason@maul.banatao.berkeley.edu'
 alias savio='ssh zhangj@hpc.brc.berkeley.edu'
 
 alias source_sh='source ~/.zshrc'
+bindkey -v
