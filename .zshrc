@@ -156,7 +156,11 @@ alias clip="xargs echo -n | xclip -selection clipboard"
 
 alias kitten='ssh -X jason@kitten.eecs.berkeley.edu'
 alias maul='ssh -X jason@maul.banatao.berkeley.edu'
+alias em2='ssh -X jason@em2.ist.berkeley.edu'
 alias savio='ssh zhangj@hpc.brc.berkeley.edu'
+
+
+alias ns='nvidia-smi'
 
 alias source_sh='source ~/.zshrc'
 bindkey -v
