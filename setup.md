@@ -5,7 +5,7 @@ git clone --recursive git@github.com:jasonyzhang/oh-my-zsh.git
 
 2. Symlink conf
 ```
-ln -sf ~/.oh-my-zsh/.zshrc ~/.zshrc
+ln -sf ~/oh-my-zsh/.zshrc ~/.zshrc
 ```
 
 3. Change default shell
