@@ -159,6 +159,14 @@ alias maul='ssh -X jason@maul.banatao.berkeley.edu'
 alias em2='ssh -X jason@em2.ist.berkeley.edu'
 alias savio='ssh zhangj@hpc.brc.berkeley.edu'
 
+cuda_set () {
+    echo export CUDA_VISIBLE_DEVICES=$1
+    export CUDA_VISIBLE_DEVICES=$1
+}
+cuda_ls () {
+    echo $CUDA_VISIBLE_DEVICES
+}
+
 
 alias ns='nvidia-smi'
 
