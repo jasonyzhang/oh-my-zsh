@@ -2,7 +2,7 @@
 export PATH=/usr/bin:/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/jason/oh-my-zsh"
+export ZSH="$HOME/oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -158,6 +158,7 @@ alias kitten='ssh -X jason@kitten.eecs.berkeley.edu'
 alias maul='ssh -X jason@maul.banatao.berkeley.edu'
 alias em2='ssh -X jason@em2.ist.berkeley.edu'
 alias savio='ssh zhangj@hpc.brc.berkeley.edu'
+alias replicant='ssh -X jasonzh2@gs19639.sp.cs.cmu.edu'
 
 cuda_set () {
     echo export CUDA_VISIBLE_DEVICES=$1
@@ -171,4 +172,3 @@ cuda_ls () {
 alias ns='nvidia-smi'
 
 alias source_sh='source ~/.zshrc'
-bindkey -v
