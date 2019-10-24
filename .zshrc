@@ -173,5 +173,5 @@ cuda_ls () {
 alias ns='nvidia-smi'
 
 alias source_sh='source ~/.zshrc'
-
+unsetopt nomatch  # Use bash behavior for globbing
 unsetopt share_history  # Don't want to share history across panes...
