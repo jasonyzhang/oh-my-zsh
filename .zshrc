@@ -160,6 +160,12 @@ alias em2='ssh -X jason@em2.ist.berkeley.edu'
 alias savio='ssh zhangj@hpc.brc.berkeley.edu'
 alias replicant='ssh -X jasonzh2@gs19639.sp.cs.cmu.edu'
 
+em () {
+    host="jason@em$1.ist.berkeley.edu"
+    echo $host
+    ssh -X $host
+}
+
 cuda_set () {
     echo export CUDA_VISIBLE_DEVICES=$1
     export CUDA_VISIBLE_DEVICES=$1
