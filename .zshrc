@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=/usr/bin:/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/usr/bin:/bin:$HOME/bin:/usr/local/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/oh-my-zsh"
@@ -159,6 +159,7 @@ alias maul='ssh -X jason@maul.banatao.berkeley.edu'
 alias em2='ssh -X jason@em2.ist.berkeley.edu'
 alias savio='ssh zhangj@hpc.brc.berkeley.edu'
 alias replicant='ssh -X jasonzh2@gs19639.sp.cs.cmu.edu'
+alias replicanty='ssh -Y jasonzh2@gs19639.sp.cs.cmu.edu'
 
 em () {
     host="jason@em$1.ist.berkeley.edu"
@@ -178,3 +179,5 @@ cuda_ls () {
 alias ns='nvidia-smi'
 
 alias source_sh='source ~/.zshrc'
+
+unsetopt share_history  # Don't want to share history across panes...
