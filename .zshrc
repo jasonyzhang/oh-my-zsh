@@ -161,6 +161,12 @@ alias savio='ssh zhangj@hpc.brc.berkeley.edu'
 alias replicant='ssh -X jasonzh2@gs19639.sp.cs.cmu.edu'
 alias replicanty='ssh -Y jasonzh2@gs19639.sp.cs.cmu.edu'
 
+em () {
+    host="jason@em$1.ist.berkeley.edu"
+    echo $host
+    ssh -X $host
+}
+
 cuda_set () {
     echo export CUDA_VISIBLE_DEVICES=$1
     export CUDA_VISIBLE_DEVICES=$1
@@ -173,5 +179,5 @@ cuda_ls () {
 alias ns='nvidia-smi'
 
 alias source_sh='source ~/.zshrc'
-
+unsetopt nomatch  # Use bash behavior for globbing
 unsetopt share_history  # Don't want to share history across panes...
