@@ -176,6 +176,11 @@ cuda_ls () {
     echo $CUDA_VISIBLE_DEVICES
 }
 
+print_scs () {
+    scp $1 jasonzh2@gs19639.sp.cs.cmu.edu:~/Downloads
+    ssh jasonzh2@gs19639.sp.cs.cmu.edu lpr -o sides=two-sided-long-edge ~/Downloads/$1
+}
+
 
 alias ns='nvidia-smi'
 
