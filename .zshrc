@@ -192,4 +192,4 @@ alias count='find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '\''echo "{} : $
 unsetopt nomatch  # Use bash behavior for globbing
 unsetopt share_history  # Don't want to share history across panes...
 
-source conda.sh
+source $ZSH/conda.sh
