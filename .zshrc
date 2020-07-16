@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 source /etc/profile
-export PATH=$PATH:/usr/bin:/bin:$HOME/bin:/usr/local/bin:$HOME/.local/bin
+export PATH=$HOME/.local/bin:$PATH:/usr/bin:/bin:$HOME/bin:/usr/local/bin
+# export PATH=$PATH:/usr/bin:/bin:$HOME/bin:/usr/local/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/oh-my-zsh"
@@ -25,7 +26,7 @@ ZSH_THEME="agnoster"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
@@ -186,5 +187,9 @@ print_scs () {
 alias ns='nvidia-smi'
 
 alias source_sh='source ~/.zshrc'
+alias count='find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '\''echo "{} : $(find "{}" -type f | wc -l)" file\(s\)'\'' \;'
+
 unsetopt nomatch  # Use bash behavior for globbing
 unsetopt share_history  # Don't want to share history across panes...
+
+source conda.sh
