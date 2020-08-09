@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 source /etc/profile
-export PATH=$PATH:/usr/bin:/bin:$HOME/bin:/usr/local/bin:$HOME/.local/bin
+export PATH=$HOME/.local/bin:$PATH:/usr/bin:/bin:$HOME/bin:/usr/local/bin
+# export PATH=$PATH:/usr/bin:/bin:$HOME/bin:/usr/local/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/oh-my-zsh"
@@ -25,7 +26,7 @@ ZSH_THEME="agnoster"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
@@ -161,7 +162,7 @@ alias em2='ssh -X jason@em2.ist.berkeley.edu'
 alias savio='ssh zhangj@hpc.brc.berkeley.edu'
 alias replicant='ssh -X jasonzh2@gs19639.sp.cs.cmu.edu'
 alias replicanty='ssh -Y jasonzh2@gs19639.sp.cs.cmu.edu'
-alias trinity="ssh -Y -L 35394:localhost:35394 jasonzh2@trinity.vision.cs.cmu.edu"
+alias trinity="ssh -X -L 35394:localhost:35394 jasonzh2@trinity.vision.cs.cmu.edu"
 
 em () {
     host="jason@em$1.ist.berkeley.edu"
@@ -186,5 +187,9 @@ print_scs () {
 alias ns='nvidia-smi'
 
 alias source_sh='source ~/.zshrc'
+alias count='find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '\''echo "{} : $(find "{}" -type f | wc -l)" file\(s\)'\'' \;'
+
 unsetopt nomatch  # Use bash behavior for globbing
 unsetopt share_history  # Don't want to share history across panes...
+
+source $ZSH/conda.sh
