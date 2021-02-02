@@ -183,6 +183,11 @@ print_scs () {
     ssh jasonzh2@gs19639.sp.cs.cmu.edu lpr -o sides=two-sided-long-edge ~/Downloads/$1
 }
 
+ffmpeg_compress () {
+    echo ffmpeg -i $1 -c:v libx264 -crf 24 -c:a copy $2
+    ffmpeg -i $1 -c:v libx264 -crf 24 -c:a copy $2
+}
+
 
 alias ns='nvidia-smi'
 
