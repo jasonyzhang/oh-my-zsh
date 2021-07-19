@@ -162,7 +162,7 @@ alias em2='ssh -X jason@em2.ist.berkeley.edu'
 alias savio='ssh zhangj@hpc.brc.berkeley.edu'
 alias replicant='ssh -X jasonzh2@gs19639.sp.cs.cmu.edu'
 alias replicanty='ssh -Y jasonzh2@gs19639.sp.cs.cmu.edu'
-alias trinity="ssh -X -L 35394:localhost:35394 jasonzh2@trinity.vision.cs.cmu.edu"
+alias trinity="ssh -X -L 35394:localhost:35394 -L 35393:localhost:35393 -L 8097:localhost:8097 jasonzh2@trinity.vision.cs.cmu.edu"
 
 em () {
     host="jason@em$1.ist.berkeley.edu"
@@ -198,3 +198,5 @@ unsetopt nomatch  # Use bash behavior for globbing
 unsetopt share_history  # Don't want to share history across panes...
 
 source $ZSH/conda.sh
+
+
