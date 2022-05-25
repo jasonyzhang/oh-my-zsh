@@ -199,4 +199,6 @@ unsetopt share_history  # Don't want to share history across panes...
 
 source $ZSH/conda.sh
 
+alias parworker='python -m parscript.worker'
+alias pardispatch='python -m parscript.dispatcher'
 
