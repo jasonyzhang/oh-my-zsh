@@ -218,4 +218,6 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+alias parworker='python -m parscript.worker'
+alias pardispatch='python -m parscript.dispatcher'
 
