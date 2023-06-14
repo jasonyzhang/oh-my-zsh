@@ -190,6 +190,9 @@ ffmpeg_compress () {
 
 
 alias ns='nvidia-smi'
+alias mamba="micromamba"
+alias conda="micromamba"
+alias nvitop="$HOME/micromamba/bin/nvitop"
 
 alias source_sh='source ~/.zshrc'
 alias count='find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '\''echo "{} : $(find "{}" -type f | wc -l)" file\(s\)'\'' \;'
@@ -197,6 +200,22 @@ alias count='find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '\''echo "{} : $
 unsetopt nomatch  # Use bash behavior for globbing
 unsetopt share_history  # Don't want to share history across panes...
 
-source $ZSH/conda.sh
 
+source $ZSH/conda.sh
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="$HOME/.local/bin/micromamba";
+export MAMBA_ROOT_PREFIX="$HOME/micromamba";
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    if [ -f "$HOME/micromamba/etc/profile.d/micromamba.sh" ]; then
+        . "$HOME/micromamba/etc/profile.d/micromamba.sh"
+    else
+        export  PATH="$HOME/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
+    fi
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
 
