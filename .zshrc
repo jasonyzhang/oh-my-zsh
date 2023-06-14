@@ -201,7 +201,7 @@ unsetopt nomatch  # Use bash behavior for globbing
 unsetopt share_history  # Don't want to share history across panes...
 
 
-source $ZSH/conda.sh
+# source $ZSH/conda.sh
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
 export MAMBA_EXE="$HOME/.local/bin/micromamba";
